@@ -1,0 +1,23 @@
+{
+    "name": "douban",
+    "version": "1.0.0",
+    "description": "a koa2 server",
+    "main": "server/index.js",
+    "scripts": {
+        "start": "node server/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viyoung/douban.git"
+    },
+    "author": "viyoung",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/viyoung/douban/issues"
+    },
+    "homepage": "https://github.com/viyoung/douban#readme",
+    "dependencies": {
+        "koa": "^2.6.2"
+    }
+}

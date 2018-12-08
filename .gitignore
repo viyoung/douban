@@ -1,0 +1,10 @@
+#dependencise
+node_modules
+#logs
+npm-debug.log
+#dist
+dist
+#system
+.DS_Store
+#Build
+build
