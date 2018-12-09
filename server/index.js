@@ -1,8 +1,16 @@
 const Koa = require('koa');
 const app = new Koa();
-const { normal } = require('./tpl');
+const views = require('koa-views')
+const { resolve } = require('path')
+
+app.use(
+    views(resolve(__dirname, './views'), { extension: 'pug' })
+)
+
 app.use(async(ctx, next) => {
-    ctx.type = 'text/html;chartset=utf-8';
-    ctx.body = normal
-});
-app.listen(3000);
+    await ctx.render('index', {
+        you: 'luke',
+        me: 'scott'
+    })
+})
+app.listen(3000)
