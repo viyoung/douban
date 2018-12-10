@@ -4,7 +4,8 @@
   "description": "a koa2 server",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "build": " rm -rf parcdl/dist && parcel build parcel/index.html -d parcel/dist --public-url /dist/",
+    "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +21,13 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "koa": "^2.6.2",
+    "koa-static": "^5.0.0",
     "koa-views": "^6.1.4",
-    "pug": "^2.0.3"
+    "parcel-bundler": "^1.10.3",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
   }
 }

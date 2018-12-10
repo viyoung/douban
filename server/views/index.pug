@@ -3,7 +3,64 @@ block title
  title Douban 首页
 
 block content
- .container
-      h1 hi #{you}
-      p this is #{me}
-      p 测试动态pug模板引擎中间件
+ style.
+  .siderbar-c{
+     width:200px;
+     height:100%;
+  }
+  ul{
+    list-style:none;
+  }
+  .container-fluid{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container-c{
+  
+  }
+  .container-fluid{
+     padding-top:15px;
+  }
+ include ./includes/header
+ div(class="container-fluid row")
+  include ./includes/siderbar
+  div(class=" container-c card col-md-10")
+   div(class="card-body")
+    div(class="row")
+      div(class="col-md-6")
+        div(class="card" style="width: 18rem;")
+          img(class="card-img-top" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544377050043&di=cbe819e535442752d91c021bd8e8e2f2&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F86%2F97%2F6656ec93eeb0acd.jpg" height="119" width="179" alt="")
+          div(class="card-body")
+            h5(class="card-title") nodeJs
+            p(class="card-text") 一个基于js的服务端开发语言
+          div(class="card-footer")
+            p 更新于一天前
+      div(class="col-md-6")
+        div(class="card" style="width: 18rem;")
+          img(class="card-img-top" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544377050043&di=cbe819e535442752d91c021bd8e8e2f2&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F86%2F97%2F6656ec93eeb0acd.jpg" height="119" width="179" alt="")
+          div(class="card-body")
+            h5(class="card-title") nodeJs
+            p(class="card-text") 一个基于js的服务端开发语言
+          div(class="card-footer")
+            p 更新于一天前
+  include ../includes/script
+  script.
+    var player=null;
+    $(document).ready(function(){
+      $('.card-img-top').click(function(e){
+        var image=$(this).data('vido')
+        if(!player){
+          player=new DPlayer({
+            container:document.getElementById(videoModel)
+          })
+        }
+      })
+    })
+  
+
+     
+  
+    
